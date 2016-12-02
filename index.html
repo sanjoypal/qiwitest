@@ -1,0 +1,184 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+<script src="jquery.js"></script>
+<script src="jquery.mobile.js"></script>
+<script src="jquery.canvasjs.js"></script>
+<script src="test.js"></script>
+
+<script src="level1/chapter1.js"></script>
+<script src="level1/chapter2.js"></script>
+<script src="level1/chapter3.js"></script>
+<script src="level1/chapter4.js"></script>
+<script src="level1/chapter5.js"></script>
+<script src="level1/chapter6.js"></script>
+<script src="level1/chapter7.js"></script>
+<script src="level1/chapter8.js"></script>
+<script src="level1/chapter9.js"></script>
+<script src="level1/chapter10.js"></script>
+<script src="level1/chapter11.js"></script>
+<script src="level1/chapter12.js"></script>
+<script src="level1/chapter13.js"></script>
+<script src="level1/chapter14.js"></script>
+<script src="level1/chapter15.js"></script>
+<script src="level1/chapter16.js"></script>
+<script src="level1/chapter17.js"></script>
+<script src="level1/chapter18.js"></script>
+<script src="level1/chapter19.js"></script>
+<script src="level1/chapter20.js"></script>
+<script src="level2/chapter1.js"></script>
+<script src="level2/chapter2.js"></script>
+<script src="level2/chapter3.js"></script>
+<script src="level3/chapter1.js"></script>
+<script src="level3/chapter2.js"></script>
+<script src="level3/chapter3.js"></script>
+
+<link rel="stylesheet" type="text/css" href="jquery.mobile.css"/>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+
+</head>
+<body>
+<div id="homepage" data-role="page">
+	<div data-position="fixed" data-role="header">
+		<h1>English Test</h1>
+	</div><!-- /header -->
+	
+	<div role="main" class="ui-content">
+		<ul id='levels' data-role="listview" data-inset="true" data-divider-theme="a">
+			<li data-role="list-divider">Choose a level</li>
+			<li><a href="#menupage">Beginner</a></li>
+			<li><a href="#menupage">Intermediate</a></li>
+			<li><a href="#menupage">Advanced</a></li>
+			<li><a href="#menupage">Professional</a></li>
+			<li><a href="#menupage">Expert</a></li>
+		</ul>
+	</div><!-- /content -->
+</div><!-- /page -->
+<div id="menupage" data-role="page">
+
+	<div data-position="fixed" data-role="header">
+                <a href="#homepage" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all">Back</a>
+		<h1 id="menuheader">Beginner</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<ul id='menus' data-role="listview" data-inset="true" data-divider-theme="a">
+			<li><a href="#chapterspage">Practice</a></li>
+			<li><a href="#quizpage">Evaluate</a></li>
+			<li><a href="#bookmarkspage">Starred</a></li>
+			<li><a href="#progresspage">Progress</a></li>
+		</ul>
+	</div><!-- /content -->
+</div><!-- /page -->
+<div id="chapterspage" data-role="page">
+
+	<div data-position="fixed" data-role="header">
+                <a href="#menupage" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all">Back</a>
+		<h1>Chapters</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<ul id='chapters' data-role='listview' data-inset='true' data-filter="true" data-divider-theme='a'>
+                </ul>
+	</div><!-- /content -->
+</div><!-- /page -->
+<div id="quizpage" data-role="page">
+
+	<div data-position="fixed" data-role="header">
+                <a id="quizback" href="#menupage" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all">Back</a>
+		<h1 id="chapterheader"></h1>
+		<a id="star" href="#" class="ui-btn ui-icon-star ui-btn-icon-notext ui-corner-all">Back</a>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p id="question">This is the place to insert question</p>
+		<form id="quizform">
+			<fieldset data-role="controlgroup">
+				<input type="radio" name="radio-choice-v-2" id="radio-choice-v-2a" value="a">
+				<label id="opta" for="radio-choice-v-2a">One sdasdsad sdsadasdsadsa sdsdas daDA adASA dsadsad</label>
+				<input type="radio" name="radio-choice-v-2" id="radio-choice-v-2b" value="b">
+				<label id="optb" for="radio-choice-v-2b">Two</label>
+				<input type="radio" name="radio-choice-v-2" id="radio-choice-v-2c" value="c">
+				<label id="optc" for="radio-choice-v-2c">Three</label>
+				<input type="radio" name="radio-choice-v-2" id="radio-choice-v-2d" value="d">
+				<label id="optd" for="radio-choice-v-2d">Four</label>
+			</fieldset>
+		</form>
+	</div><!-- /content -->
+
+	
+	<div data-position="fixed" data-role="footer">
+                <div data-role="navbar">
+      			<ul>
+		        	<li><a id="prevbtn" href="#" data-icon="arrow-l">Previous</a></li>
+		        	<li><a id= "questionnumber" href="#mypanel" data-icon="bars"></a></li>
+		        	<li><a id="nextbtn" href="#" data-icon="arrow-r">Next</a></li>
+      			</ul>
+    		</div>
+	</div><!-- /footer -->
+	<div data-role="panel" data-position="left" data-display="overlay" id="mypanel" data-position-fixed="true">
+  		<ul id='panellist' data-role="listview" data-inset="true" data-divider-theme="a">
+			<li id="resultbtn"><a href="#resultpage">Submit</a></li>
+			<li id="q1"><a href="#">Question 1</a></li>
+			<li id="q2"><a href="#">Question 2</a></li>
+			<li id="q3"><a href="#">Question 3</a></li>
+			<li id="q4"><a href="#">Question 4</a></li>
+			<li id="q5"><a href="#">Question 5</a></li>
+			<li id="q6"><a href="#">Question 6</a></li>
+			<li id="q7"><a href="#">Question 7</a></li>
+			<li id="q8"><a href="#">Question 8</a></li>
+			<li id="q9"><a href="#">Question 9</a></li>
+			<li id="q10"><a href="#">Question 10</a></li>
+			<li id="q11"><a href="#">Question 11</a></li>
+			<li id="q12"><a href="#">Question 12</a></li>
+			<li id="q13"><a href="#">Question 13</a></li>
+			<li id="q14"><a href="#">Question 14</a></li>
+			<li id="q15"><a href="#">Question 15</a></li>
+			<li id="q16"><a href="#">Question 16</a></li>
+			<li id="q17"><a href="#">Question 17</a></li>
+			<li id="q18"><a href="#">Question 18</a></li>
+			<li id="q19"><a href="#">Question 19</a></li>
+			<li id="q20"><a href="#">Question 20</a></li>
+		</ul>
+	</div><!-- /panel -->
+</div><!-- /page -->
+<div id="resultpage" data-role="page">
+	<div data-position="fixed" data-role="header">
+                <a id="resultback" href="#" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all">Back</a>
+		<h1 id="resultheader">Result</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+	<div data-role="controlgroup">
+	        <div class="ui-btn" id="ca"></div>
+        	<div class="ui-btn" id="wa"></div>
+	        <div class="ui-btn" id="ua"></div>
+	</div>
+        <ul id="answersList" data-role="listview" data-inset="true">
+        </ul>
+	</div><!-- /content -->
+</div><!-- /page -->
+<div id="bookmarkspage" data-role="page">
+	<div data-position="fixed" data-role="header">
+                <a href="#menupage" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all">Back</a>
+		<h1>Starred Answers</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+        <ul id="bookmarksList" data-role="listview" data-inset="true">
+        </ul>
+	</div><!-- /content -->
+</div><!-- /page -->
+<div id="progresspage" data-role="page">
+	<div data-position="fixed" data-role="header">
+                <a href="#menupage" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all">Back</a>
+		<h1>Progress Report</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+        <ul id="progressList" data-role="listview" data-inset="true">
+        </ul>
+	</div><!-- /content -->
+</div><!-- /page -->
+</body>
+</html>

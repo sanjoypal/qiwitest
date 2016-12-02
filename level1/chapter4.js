@@ -1,0 +1,22 @@
+var level1_chapter4 = [
+["Cell theory was proposed by ___.","Schleiden and Schwann","Robert Hooke","Beadle and Tatum","Leenuwenhoeck"],
+["The term cell was coined by ___.","Robert Hooke","De Bary","Schwann","Tatum"],
+["The cell theory is not applicable to ___.","virus","bacteria","fungi","algea"],
+["Plant cell wall mainly composed of ___.","cellulose","starch","protein","lipid"],
+["Semiautonomous organelle in the cell is ___."," choloroplast","peroxisome","endoplasmic reticulam", "golgibodies"],
+["Identify the non-membranous organelle from the following ___.","ribosome","nucleus","choloplast","endoplasmic reticulam"],
+["Cell theory was proposed by ___.","Schleiden and Schwann","Robert Hooke","Beadle and Tatum","Leenuwenhoeck"],
+["The term cell was coined by ___.","Robert Hooke","De Bary","Schwann","Tatum"],
+["The cell theory is not applicable to ___.","virus","bacteria","fungi","algea"],
+["Plant cell wall mainly composed of ___.","cellulose","starch","protein","lipid"],
+["Semiautonomous organelle in the cell is ___."," choloroplast","peroxisome","endoplasmic reticulam", "golgibodies"],
+["Identify the non-membranous organelle from the following ___.","ribosome","nucleus","choloplast","endoplasmic reticulam"],
+["Cell theory was proposed by ___.","Schleiden and Schwann","Robert Hooke","Beadle and Tatum","Leenuwenhoeck"],
+["The term cell was coined by ___.","Robert Hooke","De Bary","Schwann","Tatum"],
+["The cell theory is not applicable to ___.","virus","bacteria","fungi","algea"],
+["Plant cell wall mainly composed of ___.","cellulose","starch","protein","lipid"],
+["Semiautonomous organelle in the cell is ___."," choloroplast","peroxisome","endoplasmic reticulam", "golgibodies"],
+["Identify the non-membranous organelle from the following ___.","ribosome","nucleus","choloplast","endoplasmic reticulam"],
+["Cell theory was proposed by ___.","Schleiden and Schwann","Robert Hooke","Beadle and Tatum","Leenuwenhoeck"],
+["The term cell was coined by ___.","Robert Hooke","De Bary","Schwann","Tatum"]
+];

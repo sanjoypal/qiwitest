@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Pie Chart</title> 
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script> 
+<script type="text/javascript" src="jquery.canvasjs.min.js"></script> 
+<script type="text/javascript"> 
+window.onload = function() { 
+	$("#chartContainer").CanvasJSChart({ 
+		title: { 
+			text: "Your score : 90%",
+			fontSize: 24
+		}, 
+		axisY: { 
+			title: "Products in %" 
+		}, 
+		legend :{ 
+			verticalAlign: "center", 
+			horizontalAlign: "right" 
+		}, 
+		data: [ 
+		{ 
+			type: "pie", 
+			showInLegend: true, 
+			toolTipContent: "{label} <br/> {y} %", 
+			indexLabel: "{y} %", 
+			dataPoints: [ 
+				{ label: "Samsung",  y: 30.3, legendText: "Samsung"}, 
+				{ label: "Apple",    y: 19.1, legendText: "Apple"  }, 
+				{ label: "Huawei",   y: 4.0,  legendText: "Huawei" }
+			] 
+		} 
+		] 
+	}); 
+} 
+</script> 
+</head> 
+<body> 
+<div id="chartContainer" style="width: 100%; height: 300px"></div> 
+</body> 
+</html>

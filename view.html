@@ -1,0 +1,45 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+<script src="jquery.js"></script>
+<script src="jquery.mobile.js"></script>
+<!--
+<link rel="stylesheet" type="text/css" href="jquery.mobile.css"/>
+-->
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<script src="chapter1.js"></script>
+<script src="chapter2.js"></script>
+<script src="chapter3.js"></script>
+<script src="chapter4.js"></script>
+<script src="chapter5.js"></script>
+<script src="chapter6.js"></script>
+<script src="chapter7.js"></script>
+<script src="chapter8.js"></script>
+<script src="chapter9.js"></script>
+<script src="chapter10.js"></script>
+<script src="result.js"></script>
+<script src="report.js"></script>
+<script src="quiz.js"></script>
+<script src="controller.js"></script>
+<script src="topbar.js"></script>
+</head>
+<body onload="main();">
+  <div id="topbar" class="bar"></div>
+  <div id="stage">
+    <div id="classpage" class="page"></div>
+    <div id="menupage" class="page"></div>
+    <div id="chapterpage" class="page"></div>
+    <div id="quizpage" class="page">
+    </div>
+    <div id="flashpage" class="page"></div>
+    <div id="resultpage" class="page"></div>
+    <div id="reportpage" class="page"></div>
+  </div>
+  <div id="bottombar" class="bar">
+    <div class='btn' id='skButton' onclick='goPrevious()'><</div>
+    <div id="scrollbar" class="bar"><div id="container"></div></div>
+    <div class='btn' id='skButton' onclick='goNext()'>></div>
+    
+  </div>
+</body>
+</html>

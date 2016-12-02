@@ -1,0 +1,22 @@
+var level2_chapter2 = [
+["Alcohol22", "Ethyl alcohol", "Sodium bicarbonate", "Potassium aluminum sulfate dodecahydrate", "Aluminum oxide(Al2O3)"],
+["Alka Seltzer22", "Sodium bicarbonate", "Ethyl alcohol", "Potassium aluminum sulfate dodecahydrate", "Aluminum oxide(Al2O3)"],
+["Alum22", "Potassium aluminum sulfate dodecahydrate", "Sodium bicarbonate", "Ethyl alcohol", "Aluminum oxide(Al2O3)"],
+["Alumina22", "Aluminum oxide(Al2O3)", "Potassium aluminum sulfate dodecahydrate", "Sodium bicarbonate", "Ethyl alcohol"],
+["Alundum22", "Fused alumina", "Potassium aluminum sulfate dodecahydrate", "Sodium bicarbonate", "Ethyl alcohol"],
+["Alcohol1", "Ethyl alcohol", "Sodium bicarbonate", "Potassium aluminum sulfate dodecahydrate", "Aluminum oxide(Al2O3)"],
+["Alka Seltzer2", "Sodium bicarbonate", "Ethyl alcohol", "Potassium aluminum sulfate dodecahydrate", "Aluminum oxide(Al2O3)"],
+["Alum3", "Potassium aluminum sulfate dodecahydrate", "Sodium bicarbonate", "Ethyl alcohol", "Aluminum oxide(Al2O3)"],
+["Alumina4", "Aluminum oxide(Al2O3)", "Potassium aluminum sulfate dodecahydrate", "Sodium bicarbonate", "Ethyl alcohol"],
+["Alundum5", "Fused alumina", "Potassium aluminum sulfate dodecahydrate", "Sodium bicarbonate", "Ethyl alcohol"],
+["Alcohol1", "Ethyl alcohol", "Sodium bicarbonate", "Potassium aluminum sulfate dodecahydrate", "Aluminum oxide(Al2O3)"],
+["Alka Seltzer2", "Sodium bicarbonate", "Ethyl alcohol", "Potassium aluminum sulfate dodecahydrate", "Aluminum oxide(Al2O3)"],
+["Alum3", "Potassium aluminum sulfate dodecahydrate", "Sodium bicarbonate", "Ethyl alcohol", "Aluminum oxide(Al2O3)"],
+["Alumina4", "Aluminum oxide(Al2O3)", "Potassium aluminum sulfate dodecahydrate", "Sodium bicarbonate", "Ethyl alcohol"],
+["Alundum5", "Fused alumina", "Potassium aluminum sulfate dodecahydrate", "Sodium bicarbonate", "Ethyl alcohol"],
+["Alcohol1", "Ethyl alcohol", "Sodium bicarbonate", "Potassium aluminum sulfate dodecahydrate", "Aluminum oxide(Al2O3)"],
+["Alka Seltzer2", "Sodium bicarbonate", "Ethyl alcohol", "Potassium aluminum sulfate dodecahydrate", "Aluminum oxide(Al2O3)"],
+["Alum3", "Potassium aluminum sulfate dodecahydrate", "Sodium bicarbonate", "Ethyl alcohol", "Aluminum oxide(Al2O3)"],
+["Alumina4", "Aluminum oxide(Al2O3)", "Potassium aluminum sulfate dodecahydrate", "Sodium bicarbonate", "Ethyl alcohol"],
+["Alundum5", "Fused alumina", "Potassium aluminum sulfate dodecahydrate", "Sodium bicarbonate", "Ethyl alcohol"]
+];

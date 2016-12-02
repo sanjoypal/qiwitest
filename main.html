@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="jquery.mobile.css">
+<script src="jquery.min.js"></script>
+  <!-- Include the jQuery Mobile library -->
+  <script src="jquery.mobile.js"></script>
+<script type="text/javascript" src="jquery.canvasjs.min.js"></script>
+<script>
+$(document).on( "pageinit", function() {
+  $("#btn1").click(
+    function() {
+      alert("Button Clicked" + this.id);
+  });
+});
+</script>
+
+</head>
+<body>
+   <div data-role="page" id="pageone" data-theme="a">
+  <div data-role="header">
+    <h1>Insert Page Title Here</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <div data-role="controlgroup">
+    <a href="#pagetwo" id="btn1"  class="ui-btn" style="white-space:normal">Button 2</a>
+    <button class="ui-btn">Button</button>
+    <button class="ui-btn">Button2</button>
+    </div>
+  </div>
+  
+</div>
+<div data-role="page" id="pagetwo" data-theme="a">
+  <div data-role="header">
+    <h1>Insert Page Title Here 2</h1>
+  </div>
+</div>
+</body>
+</html>
+
