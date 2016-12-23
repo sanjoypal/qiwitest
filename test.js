@@ -1,9 +1,9 @@
 var arrayLevels = ["Beginner Level", "Intermediate Level", "Advance Level", "Professional Level", "Expert Level"];
-var chaptersL1 = ["Noun", "Pronoun", "Adjective", "Verb", "Adverb", "Phrasal Verb", "Chapter 7", "Chapter 8", "Chapter 9"];
-var chaptersL2 = ["Chapter 21", "Chapter 22", "Chapter 23", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"];
-var chaptersL3 = ["Chapter 31", "Chapter 32", "Chapter 33", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"];
-var chaptersL4 = ["Chapter 41", "Chapter 42", "Chapter 43", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"];
-var chaptersL5 = ["Chapter 51", "Chapter 52", "Chapter 53", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"];
+var chaptersL1 = ["Spelling", "Article", "Proverb", "Preposition", "Adverb", "Phrasal Verb", "Chapter 7", "Chapter 8", "Chapter 9"];
+var chaptersL2 = ["Spelling", "Article", "Proverb", "Preposition", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"];
+var chaptersL3 = ["Spelling", "Article", "Proverb", "Preposition", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"];
+var chaptersL4 = ["Spelling", "Article", "Proverb", "Preposition", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"];
+var chaptersL5 = ["Spelling", "Article", "Proverb", "Preposition", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"];
 
 var currentLevel = 1;
 var currentMenu = 0;
@@ -31,8 +31,9 @@ $(document).on( "ready", function() {
     var radioButtons = $("#quizform input:radio[name='radio-choice-v-2']");
     var selectedIndex = radioButtons.index(radioButtons.filter(':checked'));
     answers[currentQ] = selectedIndex;
+    $('#panellist li').eq(currentQ+1).children().buttonMarkup({ theme: "b"});
     console.log(selectedIndex);
-    goNext();
+    setTimeout(function() { goNext(); }, 250);
   });
   var radioButtons = $("#quizform input:radio[name='radio-choice-v-2']");
   var selectedIndex = radioButtons.index(radioButtons.find(':checked'));
@@ -45,6 +46,12 @@ $(document).on( "ready", function() {
 
 // Start Chapterpage navigation
   $("#menus").on('click', 'li', function(e) {
+    // Refresh panel list
+    for (var li = 1; li < 21; li++) {
+      answers[li - 1] = -1;
+      answersLoc[li - 1] = 0;
+      $('#panellist li').eq(li).children().buttonMarkup({ theme: "c"});;
+    }
     score = TIME;
     clearInterval(timer);
     currentMenu = $(this).closest('li').index();
@@ -117,17 +124,41 @@ $(document).on( "ready", function() {
     if (currentMenu == 3) {
       $("#progressList").html("");
       var output = "<li data-role='list-divider'><h1>Test Scores</h1></li>";
-      var testcount = localStorage.getItem("TestCount");
-      for (var i = testcount - 1; i >= 1; i--) {
-        var testscore = localStorage.getItem(currentLevel + "T" + i);
-        if (testscore != undefined) {
-          output += "<li>";
-          output += "Test " + i + " : " + testscore + "%";
-          output += "</li>";
+      var testcount = localStorage.getItem("TestCount"+currentLevel);
+      if (testcount != undefined) {
+        var totalScore = 0;
+        var testCount = 0;
+        for (var i = testcount - 1; i >= 1; i--) {
+          var testscore = localStorage.getItem(currentLevel + "T" + i);
+          if (testscore != undefined) {
+            totalScore = totalScore + testscore * 1;
+            testCount++;
+            output += "<li>";
+            output += "Test " + i + " : " + testscore + "%";
+            output += "</li>";
+          }
         }
+        var avgScore = totalScore / testCount;
+        console.log("avgScore = " + avgScore);
+        console.log("totalScore = " + totalScore);
+        console.log("testCount = " + testCount);
+        $("#progressCircle").empty();
+        $("#progressCircle").circliful({
+            animation: 1,
+            animationStep: 5,
+            foregroundBorderWidth: 15,
+            backgroundBorderWidth: 15,
+            percent: avgScore,
+            textSize: 28,
+            textStyle: 'font-size: 12px;',
+            textColor: '#666',
+            text: 'Your percentile',
+            halfCircle: 1
+        });
+        
+        $("#progressList").html(output);
+        $("#progressList").listview("refresh");
       }
-      $("#progressList").html(output);
-      $("#progressList").listview("refresh");
     }
   });
 // End Chapterpage navigation
@@ -135,6 +166,12 @@ $(document).on( "ready", function() {
     score = TIME;
     clearInterval(timer);
     console.log("Clicked Quiz Page back");
+    if (currentMenu == 1) {
+      //$("body").pagecontainer("change", "menupage", {});
+      $.mobile.changePage("#menupage");
+    } else if (currentMenu == 0) {
+      $.mobile.changePage("#chapterspage");
+    }
   });
   $("#resultback").click(function() {
     score = TIME;
@@ -148,11 +185,14 @@ $(document).on( "ready", function() {
   });
   $("#star").click(function() {
     starred = (currentLevel-1)*400 + chapterIndex*20 + (currentQ+1);
-    if (localStorage.getItem("Q"+starred) != "1")
+    if (localStorage.getItem("Q"+starred) != "1") {
       localStorage.setItem("Q"+starred, "1");
-    else {
+      $("#star").buttonMarkup({ theme: "b" });
+      alert("Bookmark added!");
+    } else {
       localStorage.removeItem("Q"+starred);
-      alert("Already existed! Removed!");
+      $("#star").buttonMarkup({theme: "c" });
+      alert("Bookmark removed!");
     }
     console.log(starred);
   });
@@ -167,6 +207,7 @@ $(document).on( "ready", function() {
       if (answers[i]+1 == answersLoc[i])
         ca++;
     }
+
     var uaq = answers.length - aq;
     $("#ca").html("Correct Answer : " + ca);
     $("#wa").html("Wrong Answer : " + (aq-ca));
@@ -176,13 +217,26 @@ $(document).on( "ready", function() {
     if (currentMenu == 0) {
       localStorage.setItem(currentLevel + "C" + chapterIndex, percent);
     } else if (currentMenu == 1) {
-      var testcount = localStorage.getItem("TestCount");
+      var testcount = localStorage.getItem("TestCount"+currentLevel);
       if (testcount == undefined)
         testcount = 1;
       localStorage.setItem(currentLevel + "T" + testcount, percent);
       testcount++;
-      localStorage.setItem("TestCount", testcount);
+      localStorage.setItem("TestCount"+currentLevel, testcount);
     }
+    $("#resultCircle").empty();
+    $("#resultCircle").circliful({
+            animation: 1,
+            animationStep: 5,
+            foregroundBorderWidth: 15,
+            backgroundBorderWidth: 15,
+            percent: percent,
+            textSize: 28,
+            textStyle: 'font-size: 12px;',
+            textColor: '#666',
+            multiPercentage: 1,
+            percentages: [10, 20, 30]
+        });
     $("#answersList").html("");
     var output = "<li data-role='list-divider'><h1>Review answers</h1></li>";
     for (var i = 0; i < answers.length; i++) {
@@ -222,6 +276,11 @@ $(document).on( "ready", function() {
     $("#chapterheader").html(listContents[chapterIndex]);
     refreshQuizPage()
     console.log(currentChapter[0][0]);
+    // Refresh panel list
+    for (var li = 1; li < 21; li++) {
+      answers[li - 1] = -1;
+      $('#panellist li').eq(li).children().buttonMarkup({ theme: "c"});;
+    }
   });
 
   function decrement() {
@@ -236,6 +295,15 @@ $(document).on( "ready", function() {
   function refreshQuizPage() {
     $("#questionnumber").html((currentQ+1) + "/" + currentChapter.length);
     $("#question").html(currentChapter[currentQ][0]);
+    // Refresh bookmark icon
+    var starIndex = (currentLevel-1)*400 + chapterIndex*20 + (currentQ+1);
+    var star = localStorage.getItem("Q" + starIndex);
+    console.log("star : " + starIndex +" " + star);
+    if (star == 1)
+        $("#star").buttonMarkup({ theme: "b" });
+    else
+        $("#star").buttonMarkup({ theme: "c" });
+    
     var answerStr;
     var j = 2;
     for (var i = 1; i < currentChapter[currentQ].length; i++) {
@@ -397,6 +465,50 @@ function getChapter(i) {
       currentChapter = level3_chapter9;
     if (i == 9)
       currentChapter = level3_chapter10;
+  }
+  if (currentLevel == 4) {
+    if (i == 0)
+      currentChapter = level4_chapter1;
+    if (i == 1)
+      currentChapter = level4_chapter2;
+    if (i == 2)
+      currentChapter = level4_chapter3;
+    if (i == 3)
+      currentChapter = level4_chapter4;
+    if (i == 4)
+      currentChapter = level4_chapter5;
+    if (i == 5)
+      currentChapter = level4_chapter6;
+    if (i == 6)
+      currentChapter = level4_chapter7;
+    if (i == 7)
+      currentChapter = level4_chapter8;
+    if (i == 8)
+      currentChapter = level4_chapter9;
+    if (i == 9)
+      currentChapter = level4_chapter10;
+  }
+  if (currentLevel == 5) {
+    if (i == 0)
+      currentChapter = level5_chapter1;
+    if (i == 1)
+      currentChapter = level5_chapter2;
+    if (i == 2)
+      currentChapter = level5_chapter3;
+    if (i == 3)
+      currentChapter = level5_chapter4;
+    if (i == 4)
+      currentChapter = level5_chapter5;
+    if (i == 5)
+      currentChapter = level5_chapter6;
+    if (i == 6)
+      currentChapter = level5_chapter7;
+    if (i == 7)
+      currentChapter = level5_chapter8;
+    if (i == 8)
+      currentChapter = level5_chapter9;
+    if (i == 9)
+      currentChapter = level5_chapter10;
   }
 }
 function createTestPaper() {
