@@ -4,6 +4,7 @@
 <script src="jquery.js"></script>
 <script src="jquery.mobile.js"></script>
 <script src="jquery.canvasjs.js"></script>
+<script src="circliful.js"></script>
 <script src="test.js"></script>
 
 <script src="level1/chapter1.js"></script>
@@ -32,6 +33,13 @@
 <script src="level3/chapter1.js"></script>
 <script src="level3/chapter2.js"></script>
 <script src="level3/chapter3.js"></script>
+<script src="level4/chapter1.js"></script>
+<script src="level4/chapter2.js"></script>
+<script src="level4/chapter3.js"></script>
+<script src="level5/chapter1.js"></script>
+<script src="level5/chapter2.js"></script>
+<script src="level5/chapter3.js"></script>
+
 
 <link rel="stylesheet" type="text/css" href="jquery.mobile.css"/>
 <link rel="stylesheet" type="text/css" href="style.css"/>
@@ -149,6 +157,8 @@
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
+        <div id="resultCircle" style="position: relative;"></div>
+        <div style="position: relative;">
 	<div data-role="controlgroup">
 	        <div class="ui-btn" id="ca"></div>
         	<div class="ui-btn" id="wa"></div>
@@ -156,6 +166,7 @@
 	</div>
         <ul id="answersList" data-role="listview" data-inset="true">
         </ul>
+	</div>
 	</div><!-- /content -->
 </div><!-- /page -->
 <div id="bookmarkspage" data-role="page">
@@ -176,6 +187,7 @@
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
+        <div id="progressCircle" style="position: relative;"></div>
         <ul id="progressList" data-role="listview" data-inset="true">
         </ul>
 	</div><!-- /content -->
